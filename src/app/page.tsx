@@ -1,101 +1,178 @@
-import Image from "next/image";
+"use client";
+// import Image from "next/image";
+import { Clock } from "./clock";
+import Link from "next/link";
+import SocialCard from "./components/SocialCard";
+import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPython,
+  faRust,
+  faJava,
+  faJs,
+  faGolang,
+} from "@fortawesome/free-brands-svg-icons";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const now = new Date();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <>
+      <div
+        className="bg-[url('/img/bg1.jpg')] bg-cover bg-center opacity-55 absolute inset-0 z-0 bg-fixed"
+        id="main"
+      ></div>
+      <nav className="grid grid-cols-3 h-[10vh] px-8 font-bold text-lg z-40 relative sticky top-0">
+        <ul className="h-full flex">
+          <li className="my-auto">
+            <Image src="/img/logo.png" alt="logo" />
+          </li>
+        </ul>
+        <ul className="mx-auto flex gap-4 h-full">
+          <li className="my-auto hover:text-[#27AE8E] duration-300">
+            <Link href="#main">Main</Link>
+          </li>
+          <li className="my-auto hover:text-[#27AE8E] duration-300">
+            <Link href="#about">About</Link>
+          </li>
+          <li className="my-auto hover:text-[#27AE8E] duration-300">
+            <Link href="#projects">Projects</Link>
+          </li>
+          <li className="my-auto hover:text-[#27AE8E] duration-300">
+            <Link href="#contacts">Contacts</Link>
+          </li>
+        </ul>
+      </nav>
+      <section className="z-10 relative h-[90vh] flex">
+        <div className="grid grid-cols-2 mx-auto my-auto gap-20 -translate-y-1/4">
+          <div className="my-auto font-bold text-4xl">
+            <h1>Hello,</h1>
+            <h1>
+              I am <span className="text-[#27AE8E] italic">Zadosaadi</span>
+            </h1>
+            <h1>Data Scientist</h1>
+          </div>
+          <div>
+            <Image removeWrapper src="/img/intro-face.png" alt="logo" />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      <section className="z-10 relative h-screen flex" id="about">
+        <div
+          className="bg-[url('/img/bg2.jpg')] bg-cover bg-center opacity-25 absolute inset-0 z-0 bg-fixed"
+          id="main"
+        ></div>
+
+        <div className="grid grid-cols-8 grid-rows-8 gap-2 mx-auto my-auto h-[80vh] w-[85vw] relative">
+          <div className="col-span-3 row-span-6">
+            <Card
+              isPressable
+              shadow="sm"
+              onPress={() => console.log("item pressed")}
+              className="bg-[#0C0B0B] relative h-full w-full  border-8 border-[#0C0B0B] rounded-lg"
+            >
+              <CardHeader className="absolute z-10 bottom-1 flex-col !items-start">
+                <p className="text-tiny text-white/60 uppercase font-bold">
+                  Myself :D
+                </p>
+                <h4 className="text-white font-medium text-large">2025</h4>
+              </CardHeader>
+              <Image
+                removeWrapper
+                alt="Card background"
+                className="z-0 w-full h-full object-cover"
+                src="/img/gigachad.png"
+              />
+            </Card>
+          </div>
+          <Card
+            isPressable
+            shadow="sm"
+            className="col-span-2 row-span-2 col-start-1 row-start-7 border-8 border-[#0C0B0B] rounded-lg text-left"
+          >
+            <div className="bg-[#0C0B0B]  h-full w-full shadow-none rounded-none">
+              <h1 className="text-xl font-bold">Skills</h1>
+              <ul className="text-sm">
+                <li>Data Science</li>
+                <li>AI Development</li>
+                <li>Cloud Architect</li>
+                <li>Fullstack Developer</li>
+              </ul>
+            </div>
+          </Card>
+          <div className="col-span-4 row-span-4 col-start-4 row-start-1 border-8 border-[#0C0B0B] rounded-lg">
+            <Card className="bg-[#0C0B0B]  h-full w-full shadow-none rounded-none">
+              <h1 className="text-4xl font-bold mx-4 my-4">
+                Hi I am <span className="text-[#27AE8E]">Zadosaadi</span>
+              </h1>
+              <p className="text-justify my-4 line-clamp-5 lg:line-clamp-none line-clamp-6 mx-4 my-4">
+                Fresh graduate passionate about Machine Learning & AI, with
+                hands-on experience in Python, SQL, API development, PySpark,
+                and Cloud ML (GCP). Successfully completed multiple projects in
+                ML model deployment, data science, and AI applications. Skilled
+                in problem- solving, critical thinking, and public speaking.
+                Seeking opportunities to contribute and grow in the AI/ML
+                industry.
+              </p>
+            </Card>
+          </div>
+          <div className="col-span-3 row-span-2 col-start-4 row-start-5 border-8 border-[#0C0B0B] rounded-lg">
+            <Card className="bg-[#0C0B0B]  h-full w-full shadow-none rounded-none relative">
+              <h1 className="text-2xl font-bold my-2">Skills</h1>
+              <ul className="text-sm grid grid-cols-2 gap-x-1 gap-y-0.5">
+                <li>Data Analysis</li>
+                <li>AI Development</li>
+                <li>Cloud Architect</li>
+                <li>Fullstack Developer</li>
+              </ul>
+            </Card>
+          </div>
+          <div className="row-span-2 col-start-7 row-start-5 border-8 border-[#0C0B0B] rounded-lg">
+            <Card className="bg-[#0C0B0B] h-full w-full shadow-none rounded-none relative">
+              <Clock time={now.getTime()} />
+              <p className="italic opacity-50 absolute inset-x-0 bottom-0 mx-2 my-2">
+                GMT +7
+              </p>
+            </Card>
+          </div>
+          <div className="col-span-4 row-span-2 col-start-3 row-start-7 border-8 border-[#0C0B0B] rounded-lg">
+            <Card className="bg-[#0C0B0B]  h-full w-full shadow-none rounded-none relative">
+              <div className="grid grid-cols-2">
+                <p className="text-2xl font-bold mx-2 my-10">Stack</p>
+                <ul className="flex flex-auto flex-row gap-6 mx-2 my-10 text-4xl">
+                  <li>
+                    <FontAwesomeIcon icon={faGolang} />
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faPython} />
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faRust} />
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faJava} />
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faJs} />
+                  </li>
+                </ul>
+              </div>
+            </Card>
+          </div>
+          <div className="col-span-2 row-span-2 col-start-7 row-start-7 border-8 border-[#0C0B0B] rounded-lg">
+            <div className="bg-[#0C0B0B] relative h-full w-full">4</div>
+          </div>
+          <div className="row-span-4 col-start-8 row-start-3 border-8 border-[#0C0B0B] rounded-lg">
+            <div className="bg-[#0C0B0B] relative h-full w-full">5</div>
+          </div>
+          <div className="row-span-2 col-start-8 row-start-1 border-8 border-[#0C0B0B] rounded-lg">
+            <div className="bg-[#0C0B0B] relative h-full w-full">
+              <SocialCard />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
