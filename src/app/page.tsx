@@ -3,7 +3,7 @@
 import { Clock } from "./clock";
 import Link from "next/link";
 import SocialCard from "./components/SocialCard";
-import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
+import { Card, CardHeader, Image } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPython,
