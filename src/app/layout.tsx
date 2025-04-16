@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
-import { config } from "@fortawesome/fontawesome-svg-core";
-import "@fortawesome/fontawesome-svg-core/styles.css";
-config.autoAddCss = false;
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Zado's Porto",
-  description: "Portofolio Zadosaaadi",
+  title: "Zadosaadi Portfolio",
+  description: "Data Scientist & Fullstack Developer Portfolio",
 };
 
 export default function RootLayout({
@@ -16,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body>
-        <Providers>{children}</Providers>
+    <html lang="en">
+      <body className={`${inter.className} bg-black text-white`}>
+        {children}
       </body>
     </html>
   );

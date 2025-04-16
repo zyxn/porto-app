@@ -3,42 +3,42 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'SF Pro Display';
-  src: url('../../public/font/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-family: "SF Pro Display";
+  src: url("../../public/font/SFPRODISPLAYREGULAR.OTF") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF Pro Display';
-  src: url('../../public/font/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-family: "SF Pro Display";
+  src: url("../../public/font/SFPRODISPLAYBOLD.OTF") format("opentype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF Pro Display';
-  src: url('../../public/font/SFPRODISPLAYLIGHTITALIC.OTF') format('opentype');
+  font-family: "SF Pro Display";
+  src: url("../../public/font/SFPRODISPLAYLIGHTITALIC.OTF") format("opentype");
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'SF Pro Display';
-  src: url('../../public/font/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  font-family: "SF Pro Display";
+  src: url("../../public/font/SFPRODISPLAYMEDIUM.OTF") format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'SF Pro Display';
-  src: url('../../public/font/SFPRODISPLAYSEMIBOLDITALIC.OTF') format('opentype');
+  font-family: "SF Pro Display";
+  src: url("../../public/font/SFPRODISPLAYSEMIBOLDITALIC.OTF")
+    format("opentype");
   font-weight: 600;
   font-style: italic;
 }
 
-
-*{
+* {
   -ms-overflow-style: none;
   scroll-behavior: smooth;
 }
@@ -46,7 +46,27 @@
   display: none;
 }
 body {
-  font-family: 'SF Pro Display';
+  font-family: "SF Pro Display";
   background-color: black;
   color: white;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0c0b0b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27ae8e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1e8c74;
 }
